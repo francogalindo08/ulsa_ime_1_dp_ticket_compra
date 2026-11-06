@@ -15,6 +15,7 @@
 #include "utilerias.h"
 #include "ticket.h"
 
+
 int main() {
     // Paso 1: variables
     int cantidad = 0;
@@ -37,6 +38,7 @@ int main() {
     do {
         std::cout << "Ingresar Cantidad de Productos adquiridos\n";
         cantidad = leerEntero("Escribe cantidad adquirida: ");
+
         if (cantidad <= 0) {
             std::cout << "La cantidad debe ser mayor que cero. Intenta de nuevo.\n";
         }
@@ -45,44 +47,61 @@ int main() {
     do {
         std::cout << "Ingresar Precio Unitario\n";
         precio = leerDecimal("Escribe el precio: ");
+
         if (precio <= 0.0) {
             std::cout << "El precio debe ser mayor que cero. Intenta de nuevo.\n";
         }
     } while (precio <= 0.0);
 
     do {
-        std::cout << "Ingresar descuento aplicado\n";
-        porcentaje = leerDecimal("Escribe el descuento: ");
-        if (porcentaje < 0.0 || porcentaje > 1.0) {
-            std::cout << "El descuento debe estar entre 0 y 100. Intenta de nuevo.\n";
-        }
-    } while (porcentaje < 0.0 || porcentaje > 1.0);
+    std::cout << "Ingresar descuento aplicado\n";
+    porcentaje = leerDecimal("Escribe el descuento: ");
 
-    // Paso 4: calcular los importes llamando a los módulos de ticket.h
-    subtotal = calcularSubtotal(cantidad, precio);
-    porcentaje=(subtotal*porcentaje );
-    descuento = calcularDescuento(subtotal , porcentaje);
-    impuesto = (subtotal - descuento) * IVA;
-    total = ((subtotal - descuento) + impuesto);
+    if (porcentaje < 0.00 || porcentaje > 100.00) {
+        std::cout << "El descuento debe estar entre 0 y 100. Intenta de nuevo.\n";
+    }
+
+} while (porcentaje < 0 || porcentaje > 100);
+
+    // Paso 4: calcular los importes
+ 
+// Paso 4: calcular los importes
+subtotal = calcularSubtotal(precio, cantidad);
+
+// Calcular descuento
+descuento = calcularDescuento(subtotal, porcentaje);
+
+// Calcular IVA después del descuento
+impuesto = (subtotal - descuento) * IVA;
+
+// Calcular total
+total = (subtotal - descuento) + impuesto;
 
     // Paso 5: imprimir el ticket
     std::cout << "\n--- Ticket de compra ---\n";
-    
+
     std::cout << "Producto: " << producto << "\n";
-     std::cout << std::string(20, '=') << "\n";
+    std::cout << std::string(20, '=') << "\n";
+
     std::cout << "Cantidad: " << cantidad << "\n";
-     std::cout << std::string(20, '=') << "\n";
+    std::cout << std::string(20, '=') << "\n";
+
     std::cout << "Precio unitario: " << precio << "\n";
-     std::cout << std::string(20, '=') << "\n";
+    std::cout << std::string(20, '=') << "\n";
+
     std::cout << "Subtotal: " << subtotal << "\n";
-     std::cout << std::string(20, '=') << "\n";
+    std::cout << std::string(20, '=') << "\n";
+
     std::cout << "Descuento: " << descuento << "\n";
-     std::cout << std::string(20, '=') << "\n";
+    std::cout << std::string(20, '=') << "\n";
+
     std::cout << "IVA: " << impuesto << "\n";
-     std::cout << std::string(20, '=') << "\n";
+    std::cout << std::string(20, '=') << "\n";
+
     std::cout << "Total: " << total << "\n";
 
-    // ¿Qué significa return 0;?
+    // Finalizar programa
     return 0;
 }
+
 

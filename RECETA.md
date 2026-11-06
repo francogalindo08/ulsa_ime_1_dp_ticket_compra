@@ -10,7 +10,33 @@
 <!-- Debe leerse casi igual que tu árbol de análisis descendente (sección 6 del README). -->
 
 ```text
-1. MOSTRAR "Bienvenido a mi programa"
+
+1-Declarar las variables y la constante IVA = 0.16.
+2-Mostrar el mensaje “Bienvenido a la tienda”.
+3-Leer el producto (el texto no puede quedar vacío).
+4-Leer la cantidad:
+5-Repetir mientras cantidad ≤ 0, mostrando el mensaje de error.
+6-Leer el precio:
+7-Repetir mientras precio ≤ 0, mostrando el mensaje de error.
+8-Leer el descuento:
+9-Repetir mientras porcentaje < 0 o porcentaje > 100, mostrando el mensaje de error.
+10-Calcular el subtotal:
+subtotal = precio × cantidad
+Calcular el descuento (en pesos):
+descuento = subtotal × (porcentaje ÷ 100)
+Calcular el IVA sobre el monto ya descontado:
+impuesto = (subtotal − descuento) × IVA
+11-Calcular el total:
+total = (subtotal − descuento) + impuesto
+12-Imprimir el ticket, con una línea de = entre cada renglón:
+Producto
+Cantidad
+Precio unitario
+Subtotal
+Descuento
+IVA
+Total
+Terminar el programa.
 
 ```
 

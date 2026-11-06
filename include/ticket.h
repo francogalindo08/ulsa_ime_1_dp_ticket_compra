@@ -13,7 +13,7 @@ inline double calcularSubtotal(double precio, int cantidad) {
 // Devuelve: el monto del descuento en pesos.
 // OJO: esta funcion tiene un error escondido a proposito. Lee la Fase 3.
 inline double calcularDescuento(double subtotal, double porcentaje) {
-    return subtotal - porcentaje;
+    return subtotal * (porcentaje/100);
 }
 
 // TODO: calcularIVA
