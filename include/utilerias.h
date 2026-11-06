@@ -52,6 +52,12 @@ inline int leerEntero(const std::string& mensaje) {
 //
 // Recibe: el mensaje que se muestra al usuario.
 // Devuelve: el numero que escribio el usuario, como double.
+inline void imprimirLinea(int largo, char simbolo) {
+    for (int i = 0; i < largo; i++) {
+        std::cout << simbolo;
+    }
+    std::cout << std::endl;
+}
 inline double leerDecimal(const std::string& mensaje) {
     std::string linea;
     while (true) {
@@ -109,4 +115,5 @@ inline std::string leerCadena(const std::string& mensaje) {
         }
         std::cout << "Entrada no valida. Escribe al menos un caracter.\n";
     }
+    
 }

@@ -5,7 +5,7 @@
 
 ## 1. Descripción del problema (Fase 1)
 <!-- Explica con tus palabras qué hace tu programa y para qué serviría en la vida real. Máximo 4 líneas. -->
-
+El programa sevira paramostrar el ticket de compra de un producto, mostrando su precio unitario y la cantidad de de veces que fue adquirido 
 _____
 
 ## 2. Entradas y salidas (Fase 1)
@@ -15,16 +15,16 @@ _____
 
 | Entrada | Tipo de dato | Función de `utilerias.h` |
 |---|---|---|
-| _____ | _____ | _____ |
-| _____ | _____ | _____ |
-| _____ | _____ | _____ |
-| _____ | _____ | _____ |
+| __nombre_ | __string__ | _leerEntero____ |
+| __precio ___ | ____double_ | __inline double leerDecimal___ |
+| ___cantidad __ | __int___ | _____ |
+| ___descuento__ | ___double__ | _____ |
 
 **Salida** (¿qué datos muestra el ticket?):
-_____
+___subtotal, el descuento, el IVA y el total. __
 
 **¿El IVA se calcula sobre el subtotal o sobre lo que queda después del descuento? ¿Por qué?**
-_____
+__El IVA se calcula sobre el precio después de aplicar el descuento, es decir, sobre el subtotal menos el descuento.___
 
 ## 3. Restricciones e invariante (Fases 1 y 2)
 
@@ -32,7 +32,7 @@ _____
 
 | Dato | ¿Qué valores son válidos? | ¿Por qué? |
 |---|---|---|
-| Nombre del producto | _____ | _____ |
+| Nombre del producto | __letras___ | _____ |
 | Precio | _____ | _____ |
 | Cantidad | _____ | _____ |
 | Descuento (%) | _____ | _____ |
